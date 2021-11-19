@@ -62,10 +62,18 @@ public class LoginScreen implements Initializable {
         System.out.println("Checker returned " + checker);
         if (checker == true)
         {
-            loadMainMenu(actionEvent);
+            try {
+                loadMainMenu(actionEvent);
+            }
+            catch (Exception e) {
+                System.out.println(e.toString());
+            }
+
         }
 
-    }
+        }
+
+
 
     public void loadMainMenu(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/view/MainMenu.fxml"));

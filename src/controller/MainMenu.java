@@ -1,4 +1,23 @@
 package controller;
 
-public class MainMenu {
+import javafx.event.ActionEvent;
+import javafx.fxml.Initializable;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class MainMenu implements Initializable {
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        System.out.println("Main Menu Initialized");
+
+
+    }
+    public void openCustomersWindow(ActionEvent actionEvent) {
+        System.out.println("Customers Window Opening...");
+    }
+
+    public void openAppointmentsWindow(ActionEvent actionEvent) {
+    }
 }

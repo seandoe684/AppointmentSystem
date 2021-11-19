@@ -19,11 +19,16 @@ public class Main  extends Application {
     @Override
 
     public void start(Stage stage) throws Exception{
-
-        Parent root = FXMLLoader.load(getClass().getResource("/view/LoginScreen.fxml"));
-        stage.setTitle("Welcome");
-        stage.setScene(new Scene(root, 800,600));
-        stage.show();
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/view/LoginScreen.fxml"));
+            stage.setTitle("Welcome");
+            stage.setScene(new Scene(root, 800, 600));
+            stage.show();
+        }
+        catch (Exception e)
+        {
+           System.out.println(e.toString());
+        }
     }
 
 
@@ -34,11 +39,17 @@ public class Main  extends Application {
     }
 
     public void toMainMenu(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/view/MainMenu.fxml"));
-        Stage stage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root,600,400);
-        stage.setTitle("Main Menu");
-        stage.setScene(scene);
-        stage.show();
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/view/MainMenu.fxml"));
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root, 600, 400);
+            stage.setTitle("Main Menu");
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.toString());
+        }
     }
 }
